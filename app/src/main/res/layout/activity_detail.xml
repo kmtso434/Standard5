@@ -5,15 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.standard5.DetailActivity">
+    tools:context="com.example.standard5.presentation.DetailActivity">
 
     <TextView
         android:id="@+id/tvDetailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="70dp"
-        android:text="이름:"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="이름 : "
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,29 +22,29 @@
         android:id="@+id/tvDetailNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:text="카드 번호 :"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="카드 번호 : "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDetailName"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailName" />
 
     <TextView
-        android:id="@+id/tvDetailDate"
+        android:id="@+id/detail_peiod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:text="유효기간:"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="유효기간 : "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvDetailNumber"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailNumber" />
 
     <TextView
-        android:id="@+id/tvDetailPrice"
+        android:id="@+id/detail_view_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:text="가격"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetailDate" />
+        android:layout_marginTop="32dp"
+        android:text="카드 ViewType : "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/detail_peiod"
+        app:layout_constraintTop_toBottomOf="@+id/detail_peiod" />
 </androidx.constraintlayout.widget.ConstraintLayout>

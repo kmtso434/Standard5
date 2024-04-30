@@ -1,22 +1,7 @@
 package com.example.standard5.extension
 
 import android.app.Activity
-import android.content.Context
-import android.content.Intent
-import androidx.core.os.bundleOf
+import android.os.Parcelable
 
-inline fun <reified T : Any> Activity.extraNotNull(key:String, default: T? = null) = lazy {
-    val value = intent?.extras?.getLong(key)
-    requireNotNull(if(value is T) value else default) {key}
-}
-
-inline fun <reified T : Any> newIntent(context: Context) : Intent =
-    Intent(context, T::class.java)
-
-inline fun <reified  T : Any> Context.lauchActivity (
-    vararg pairs: Pair<String, Any?>
-){
-    val intent = newIntent<T>(this)
-    intent.putExtras(bundleOf(*pairs))
-    startActivity(intent)
-}
+inline fun <reified T : Parcelable> Activity.getParcelableExtra(key: String) =
+    lazy { intent.getParcelableExtra<T>(key) }
